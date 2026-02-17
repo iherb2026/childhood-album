@@ -61,62 +61,62 @@
 
         .section-title {
             font-family: 'Kalam', cursive;
-            font-size: 2em;
+            font-size: 2.2em;
             color: #8d6e63;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             border-left: 5px solid var(--accent-gold);
             padding-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-icon {
+            font-size: 1.5em;
         }
 
         .photo-entry {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             background: white;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transform: rotate(-1deg);
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transform: rotate(-0.5deg);
             transition: transform 0.3s;
         }
 
         .photo-entry:nth-child(even) {
-            transform: rotate(1.5deg);
+            transform: rotate(0.8deg);
         }
 
         .photo-entry:hover {
-            transform: rotate(0deg) scale(1.02);
+            transform: rotate(0deg) scale(1.01);
             z-index: 10;
         }
 
-        .photo-placeholder {
+        .photo-entry img {
             width: 100%;
-            height: 300px;
-            background-color: #eee;
-            background-image: url('https://www.transparenttextures.com/patterns/canvas-orange.png');
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            color: #999;
-            border: 1px solid #ddd;
-            position: relative;
-        }
-
-        .photo-placeholder::after {
-            content: '🖼️ ' attr(data-filename);
+            max-height: 550px;
+            object-fit: contain;
+            background: #f9f9f9;
             display: block;
+            border: 1px solid #eee;
         }
 
         .description {
-            margin-top: 20px;
-            font-size: 1.1em;
+            margin-top: 25px;
+            font-size: 1.15em;
             text-align: justify;
+            color: #4e342e;
         }
 
         .handwritten {
             font-family: 'Kalam', cursive;
             color: #1a237e;
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin-top: 15px;
             display: block;
+            border-top: 1px dashed #d7ccc8;
+            padding-top: 10px;
         }
 
         .footer {
@@ -130,6 +130,7 @@
         @media (max-width: 600px) {
             .book { padding: 30px; }
             h1 { font-size: 1.8em; }
+            .photo-entry img { max-height: 350px; }
         }
     </style>
 </head>
@@ -140,7 +141,10 @@
 
     <!-- Japan Section -->
     <div class="section">
-        <div class="section-title">🇯🇵 日本：傳統與現代的交織</div>
+        <div class="section-title">
+            <span class="section-icon">🇯🇵</span>
+            <span>日本：傳統與現代的交織</span>
+        </div>
         <div class="photo-entry">
             <img src="DSC03362.jpg" alt="上野公園">
             <div class="description">
@@ -153,6 +157,7 @@
             <div class="description">
                 By contrast, Nara was a much quieter place compared to Tokyo. The highlight was Nara Park, where I met the famous sacred deer.
             </div>
+            <span class="handwritten">跟奈良公園的小鹿近距離接觸。</span>
         </div>
         <div class="photo-entry">
             <img src="DSC08359.jpg" alt="與小鹿互動">
@@ -165,7 +170,10 @@
 
     <!-- Pingtung Section -->
     <div class="section">
-        <div class="section-title">🐟 屏東海生館之旅</div>
+        <div class="section-title">
+            <span class="section-icon">🐟</span>
+            <span>屏東海生館之旅</span>
+        </div>
         <div class="photo-entry">
             <img src="1699871204076.jpg" alt="屏東海生館">
             <div class="description">
@@ -177,7 +185,10 @@
 
     <!-- New Zealand Section -->
     <div class="section">
-        <div class="section-title">🥝 紐西蘭：純淨的大自然</div>
+        <div class="section-title">
+            <span class="section-icon">🥝</span>
+            <span>紐西蘭：純淨的大自然</span>
+        </div>
         <div class="photo-entry">
             <img src="DSC02282_Original.jpg" alt="紐西蘭老師">
             <div class="description">
@@ -196,7 +207,10 @@
 
     <!-- U.K Section -->
     <div class="section">
-        <div class="section-title">🏰 英國：歷史的脈動</div>
+        <div class="section-title">
+            <span class="section-icon">🏰</span>
+            <span>英國：歷史的脈動</span>
+        </div>
         <div class="photo-entry">
             <img src="IMG_20250903_213355_Original.jpg" alt="倫敦大笨鐘">
             <div class="description">
@@ -208,7 +222,10 @@
 
     <!-- France Section -->
     <div class="section">
-        <div class="section-title">🥖 法國：生活藝術</div>
+        <div class="section-title">
+            <span class="section-icon">🥖</span>
+            <span>法國：生活藝術</span>
+        </div>
         <div class="photo-entry">
             <img src="IMG_20250825_201429%20(1).jpg" alt="巴黎艾菲爾鐵塔">
             <div class="description">

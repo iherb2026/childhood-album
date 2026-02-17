@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>童年旅程手札 - My Childhood Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper-bg: #fdfaf1;
+            --ink-color: #3e2723;
+            --accent-gold: #bcaaa4;
+            --border-color: #d7ccc8;
+        }
+
+        body {
+            background-color: #e0d7c6;
+            background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+            font-family: 'Noto Serif TC', serif;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .book {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--paper-bg);
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.05);
+            border-radius: 5px;
+            position: relative;
+            border-left: 15px solid #5d4037;
+        }
+
+        .book::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10px; bottom: 0;
+            width: 1px;
+            background: rgba(0,0,0,0.1);
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #5d4037;
+            border-bottom: 2px double var(--accent-gold);
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+            clear: both;
+        }
+
+        .section-title {
+            font-family: 'Kalam', cursive;
+            font-size: 2em;
+            color: #8d6e63;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-gold);
+            padding-left: 15px;
+        }
+
+        .photo-entry {
+            margin-bottom: 40px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            transition: transform 0.3s;
+        }
+
+        .photo-entry:nth-child(even) {
+            transform: rotate(1.5deg);
+        }
+
+        .photo-entry:hover {
+            transform: rotate(0deg) scale(1.02);
+            z-index: 10;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            background-image: url('https://www.transparenttextures.com/patterns/canvas-orange.png');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #999;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+
+        .photo-placeholder::after {
+            content: '🖼️ ' attr(data-filename);
+            display: block;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .handwritten {
+            font-family: 'Kalam', cursive;
+            color: #1a237e;
+            font-size: 1.2em;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 0.9em;
+            color: #8d6e63;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .book { padding: 30px; }
+            h1 { font-size: 1.8em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="book">
+    <h1>我的成長旅程相簿</h1>
+
+    <!-- Pingtung Section -->
+    <div class="section">
+        <div class="section-title">屏東海生館之旅</div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="1699871204076.jpg"></div>
+            <div class="description">
+                The National Museum of Marine Biology & Aquarium is a world-class destination that brings the wonders of the deep sea to life. Its most iconic feature is the massive underwater tunnel, where you can walk beneath gliding sharks and rays in one of the longest displays in Asia. From the majestic beluga whales to the towering giant kelp forests, the museum offers an immersive look at aquatic life, blending education with the pure awe of the ocean’s beauty.
+            </div>
+            <span class="handwritten">校外教學的大合照，海生館的入口好壯觀！</span>
+        </div>
+    </div>
+
+    <!-- Japan Section -->
+    <div class="section">
+        <div class="section-title">日本：傳統與現代的交織</div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="DSC03362.jpg"></div>
+            <div class="description">
+                My journey through Japan perfectly balanced futuristic energy with ancient tradition. In Tokyo, I was swept up in a whirlwind of skyscrapers and the high-tech bustle of Shibuya.
+            </div>
+            <span class="handwritten">在上野公園的清水觀音堂，這裡的楓葉很有日本的味道。</span>
+        </div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="DSC08212.jpg"></div>
+            <div class="description">
+                By contrast, Nara was a much quieter place compared to Tokyo. The highlight was Nara Park, where I met the famous sacred deer.
+            </div>
+        </div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="DSC08359.jpg"></div>
+            <div class="description">
+                Interacting with these "polite" animals, who bow for crackers, provided a charming connection to nature that felt worlds away from Tokyo’s neon glow.
+            </div>
+            <span class="handwritten">戴著皮卡丘帽子跟小鹿打招呼，鹿真的會點頭耶！</span>
+        </div>
+    </div>
+
+    <!-- New Zealand Section -->
+    <div class="section">
+        <div class="section-title">紐西蘭：純淨的大自然</div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="DSC02282_Original.jpg"></div>
+            <div class="description">
+                Studying in New Zealand was an incredible chapter, made even better by my teacher, Mr. Yates. He was remarkably kind, regularly taking the time to read my daily diary entries and offer support.
+            </div>
+            <span class="handwritten">和超親切的 Mr. Yates 老師合照，這是我在 Room 26 的回憶。</span>
+        </div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="IMG_20230527_140945_Original.jpg"></div>
+            <div class="description">
+                The absolute highlight of my trip, however, was visiting the powerful Huka Falls. Seeing the sheer volume of bright blue water thundering through the narrow ravine was breathtaking. It was a stunning display of New Zealand’s raw, natural beauty.
+            </div>
+            <span class="handwritten">胡卡瀑布的水藍得不可思議，大自然的威力好震撼！</span>
+        </div>
+    </div>
+
+    <!-- France Section -->
+    <div class="section">
+        <div class="section-title">法國：生活藝術</div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="IMG_20250825_201429 (1).jpg"></div>
+            <div class="description">
+                Paris felt like a living museum, where every street is a blend of romance and iconic design. Whether it was seeing the Eiffel Tower sparkle at night or wandering through the art-filled halls of the Louvre, the city has a timeless elegance.
+            </div>
+            <span class="handwritten">坐在艾菲爾鐵塔前的草地上，這就是巴黎的午後。</span>
+        </div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="IMG_20250827_171839_Original.jpg"></div>
+            <div class="description">
+                From the smell of fresh croissants in a Montmartre café to a sunset walk along the Seine, it’s a place that perfectly captures the "art of living."
+            </div>
+            <span class="handwritten">羅浮宮的金字塔，我也有帶我的小相機來紀錄。</span>
+        </div>
+    </div>
+
+    <!-- U.K Section -->
+    <div class="section">
+        <div class="section-title">英國：歷史的脈動</div>
+        <div class="photo-entry">
+            <div class="photo-placeholder" data-filename="IMG_20250903_213355_Original.jpg"></div>
+            <div class="description">
+                London is a perfect mix of royal history and modern energy. My favorite memories are the sights of Big Ben and the Tower of London, which make you feel the city’s deep past. Whether I was walking along the River Thames or catching a show in the West End, London felt like a place where every street corner has a story to tell.
+            </div>
+            <span class="handwritten">夜晚的大笨鐘金光閃閃，泰晤士河畔的風涼涼的。</span>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 童年旅程紀錄 - 記錄每一個純真時刻
+    </div>
+</div>
+
+</body>
+</html>

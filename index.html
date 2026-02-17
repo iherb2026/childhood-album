@@ -19,7 +19,7 @@
             font-family: 'Noto Serif TC', serif;
             color: var(--ink-color);
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px 10px;
             line-height: 1.6;
         }
 
@@ -27,26 +27,31 @@
             max-width: 900px;
             margin: 0 auto;
             background: var(--paper-bg);
-            padding: 60px;
+            padding: 40px 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.05);
             border-radius: 5px;
             position: relative;
-            border-left: 15px solid #5d4037;
+            border-left: 10px solid #5d4037;
         }
 
-        .book::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 10px; bottom: 0;
-            width: 1px;
-            background: rgba(0,0,0,0.1);
-            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        /* 電腦版左側裝飾線 */
+        @media (min-width: 768px) {
+            body { padding: 40px 20px; }
+            .book { padding: 60px; border-left-width: 15px; }
+            .book::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 10px; bottom: 0;
+                width: 1px;
+                background: rgba(0,0,0,0.1);
+                box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+            }
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 50px;
+            font-size: 2.2em;
+            margin-bottom: 40px;
             color: #5d4037;
             border-bottom: 2px double var(--accent-gold);
             display: inline-block;
@@ -55,47 +60,54 @@
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             clear: both;
         }
 
         .section-title {
             font-family: 'Kalam', cursive;
-            font-size: 2.2em;
+            font-size: 1.8em;
             color: #8d6e63;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-left: 5px solid var(--accent-gold);
             padding-left: 15px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-wrap: wrap; /* 防止標題過長時在手機上溢出 */
         }
 
         .section-icon {
-            font-size: 1.5em;
+            font-size: 1.3em;
         }
 
         .photo-entry {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             background: white;
-            padding: 20px;
+            padding: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            transform: rotate(-0.5deg);
+            transform: none; /* 手機版關閉傾斜，增加可讀性 */
             transition: transform 0.3s;
         }
 
-        .photo-entry:nth-child(even) {
-            transform: rotate(0.8deg);
-        }
-
-        .photo-entry:hover {
-            transform: rotate(0deg) scale(1.01);
-            z-index: 10;
+        @media (min-width: 768px) {
+            .photo-entry {
+                padding: 20px;
+                transform: rotate(-0.5deg);
+            }
+            .photo-entry:nth-child(even) {
+                transform: rotate(0.8deg);
+            }
+            .photo-entry:hover {
+                transform: rotate(0deg) scale(1.01);
+                z-index: 10;
+            }
         }
 
         .photo-entry img {
             width: 100%;
             max-height: 550px;
+            height: auto;
             object-fit: contain;
             background: #f9f9f9;
             display: block;
@@ -103,16 +115,17 @@
         }
 
         .description {
-            margin-top: 25px;
-            font-size: 1.15em;
+            margin-top: 20px;
+            font-size: 1.1em;
             text-align: justify;
             color: #4e342e;
+            word-wrap: break-word; /* 確保長單字不會撐破手機版面 */
         }
 
         .handwritten {
             font-family: 'Kalam', cursive;
             color: #1a237e;
-            font-size: 1.3em;
+            font-size: 1.2em;
             margin-top: 15px;
             display: block;
             border-top: 1px dashed #d7ccc8;
@@ -121,16 +134,19 @@
 
         .footer {
             text-align: center;
-            margin-top: 100px;
-            font-size: 0.9em;
+            margin-top: 60px;
+            font-size: 0.85em;
             color: #8d6e63;
             font-style: italic;
         }
 
-        @media (max-width: 600px) {
-            .book { padding: 30px; }
-            h1 { font-size: 1.8em; }
-            .photo-entry img { max-height: 350px; }
+        /* 手機版字體縮小 */
+        @media (max-width: 768px) {
+            h1 { font-size: 1.6em; }
+            .section-title { font-size: 1.5em; }
+            .description { font-size: 1.05em; }
+            .handwritten { font-size: 1.1em; }
+            .book { padding: 30px 15px; }
         }
     </style>
 </head>
@@ -186,7 +202,7 @@
     <!-- New Zealand Section -->
     <div class="section">
         <div class="section-title">
-            <span class="section-icon">🥝</span>
+            <span class="section-icon">Kiwi</span>
             <span>紐西蘭：純淨的大自然</span>
         </div>
         <div class="photo-entry">
